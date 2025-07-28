@@ -1,1 +1,138 @@
 /* Styles for Terms Screen */ 
+
+.terms-gradient-bg {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        180deg,
+        #FBFCFD 0%,
+        #ECF5FF 30%,
+        #579CEA 70%,
+        #2289FF 100%
+    );
+    padding: 40px 0;
+}
+
+/* Remove .terms-container if not used in your JSX */
+
+.terms-content {
+    background: rgba(255,255,255,0.95);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(34,137,255,0.10);
+    max-width: 700px;
+    width: 90%;
+    padding: 36px 32px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1a2a3a;
+    max-height: 80vh;           /* Set a max height */
+    overflow-y: auto;           /* Enable vertical scroll */
+    scrollbar-width: thin;      /* For Firefox */
+    scrollbar-color: #2289FF #ECF5FF;
+}
+
+/* Custom scrollbar for Chrome */
+.terms-content::-webkit-scrollbar {
+    width: 8px;
+}
+.terms-content::-webkit-scrollbar-thumb {
+    background: #2289FF;
+    border-radius: 8px;
+}
+.terms-content::-webkit-scrollbar-track {
+    background: #ECF5FF;
+    border-radius: 8px;
+}
+
+.terms-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5em;
+    color: #2289FF;
+    font-weight: 700;
+}
+
+.terms-date {
+    color: #579CEA;
+    font-size: 1rem;
+    margin-bottom: 1.5em;
+}
+
+.terms-content ol {
+    padding-left: 0;
+    counter-reset: step;
+}
+
+.terms-content li {
+    margin-bottom: 1.2em;
+    line-height: 1.7;
+    list-style: none;
+    position: relative;
+    padding-left: 48px;
+}
+
+.terms-content li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #579CEA 0%, #2289FF 100%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(34,137,255,0.10);
+}
+
+/* Add "Next" after each step except the last */
+.terms-content li:not(:last-child)::after {
+    content: "Next";
+    display: inline-block;
+    margin-left: 16px;
+    color: #2289FF;
+    font-weight: 500;
+    font-size: 1rem;
+    background: #ECF5FF;
+    border-radius: 12px;
+    padding: 2px 12px;
+    vertical-align: middle;
+    box-shadow: 0 1px 4px rgba(34,137,255,0.07);
+    transition: background 0.2s;
+}
+
+.terms-content li:not(:last-child):hover::after {
+    background: #579CEA;
+    color: #fff;
+}
+
+.terms-content a {
+    color: #2289FF;
+    text-decoration: underline;
+}
+
+.terms-step-btn {
+    background: linear-gradient(90deg, #579CEA 0%, #2289FF 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(34,137,255,0.10);
+    transition: background 0.2s, color 0.2s, opacity 0.2s;
+    margin: 0 8px;
+}
+.terms-step-btn:disabled {
+    background: #ECF5FF;
+    color: #579CEA;
+    cursor: not-allowed;
+    opacity: 0.7;
+}

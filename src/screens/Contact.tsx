@@ -1,3 +1,5 @@
+import '../styles/Contact.css';
+
 export default function ContactScreen() {
     return (
         <>

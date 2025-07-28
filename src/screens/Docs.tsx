@@ -1,3 +1,5 @@
+import '../styles/Docs.css';
+
 export default function DocsScreen() {
     return (
         <>

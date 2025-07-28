@@ -1,3 +1,5 @@
+import '../styles/Download.css';
+
 export default function DownloadScreen() {
     return (
         <>

@@ -1,3 +1,5 @@
+import '../styles/Terms.css';
+
 export default function TermsScreen() {
     return (
         <>

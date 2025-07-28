@@ -1,3 +1,5 @@
+import '../styles/TourGuideApplication.css';
+
 export default function ApplicationScreen() {
     return (
         <>
